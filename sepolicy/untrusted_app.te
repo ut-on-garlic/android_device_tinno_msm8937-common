@@ -38,5 +38,3 @@ allow untrusted_app proc:file getattr;
 allow untrusted_app proc_diskstats:file getattr;
 allow untrusted_app proc_tty_drivers:file { read open };
 allow untrusted_app serialno_prop:file { read open };
-
-

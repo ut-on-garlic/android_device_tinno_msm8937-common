@@ -2,4 +2,3 @@ allow hwservicemanager init:binder { call transfer };
 allow hwservicemanager init:dir search;
 allow hwservicemanager init:file { read open };
 allow hwservicemanager init:process getattr;
-

@@ -28,4 +28,4 @@ allow init device:chr_file { ioctl read write open };
 allow init system_server:binder { call transfer };
 allow init system_data_file:file getattr;
 allow init init:binder { call transfer };
-
+allow init hal_fingerprint_default:binder { call transfer };
