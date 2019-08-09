@@ -13,7 +13,6 @@ allow gx_fpd gx_fpd_device:chr_file { read write ioctl open };
 allow gx_fpd hal_fingerprint_default:binder transfer;
 allow gx_fpd init:unix_stream_socket connectto;
 allow gx_fpd property_socket:sock_file write;
-allow gx_fpd self:capability dac_override;
 allow gx_fpd servicemanager:binder { transfer call };
 allow gx_fpd tee_device:chr_file { read write ioctl open };
 allow gx_fpd hal_fingerprint_default:binder call;
