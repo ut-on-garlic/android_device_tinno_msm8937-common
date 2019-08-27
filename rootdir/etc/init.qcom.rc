@@ -575,8 +575,8 @@ service vendor.dataqti /vendor/bin/qti
 
 service vendor.sensors.qti /vendor/bin/sensors.qti
     class core
-    user root
-    group root
+    user system
+    group system
     writepid /dev/cpuset/system-background/tasks
 
 on property:ro.use_data_netmgrd=false
@@ -703,9 +703,9 @@ service time_daemon /vendor/bin/time_daemon
     writepid /dev/cpuset/system-background/tasks
 
 service gx_fpd /vendor/bin/gx_fpd
-    class main
-    user root
-    group root system
+    class core
+    user system
+    group system drmrpc
     oneshot
 
 on property:persist.sys.fp.goodix=0

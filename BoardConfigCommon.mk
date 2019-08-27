@@ -197,10 +197,6 @@ include device/qcom/sepolicy/sepolicy.mk
 BOARD_SEPOLICY_DIRS += $(COMMON_PATH)/sepolicy
 TARGET_SEPOLICY_DIR := msm8937
 
-ifneq ($(TARGET_BUILD_VARIANT),user)
-SELINUX_IGNORE_NEVERALLOWS := true
-endif
-
 # Telephony Jar
 TARGET_PROVIDES_QTI_TELEPHONY_JAR := true
 
