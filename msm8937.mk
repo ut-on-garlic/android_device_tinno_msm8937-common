@@ -309,6 +309,9 @@ PRODUCT_ODM_PROPERTIES += \
 # Properties
 -include $(LOCAL_PATH)/vendor_prop.mk
 
+# privapp
+PRODUCT_PROPERTY_OVERRIDES += ro.control_privapp_permissions=log
+
 # QCOM
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/privapp-permissions-qti.xml:system/etc/permissions/privapp-permissions-qti.xml \
