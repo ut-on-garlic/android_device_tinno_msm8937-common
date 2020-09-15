@@ -452,13 +452,23 @@ vendor/lib64/vendor.qti.imsrtpservice@1.0.so
 # Keystore - from tissot - PKQ1.180917.001.V10.0.4.0.PDHMIXM
 vendor/lib64/hw/keystore.msm8937.so
 
-# Listen - from TA-1024 - PKQ1.181105.001
-vendor/lib/libadpcmdec.so
-vendor/lib/libsmwrapper.so
-vendor/lib/vendor.qti.voiceprint@1.0.so
-vendor/lib/hw/sound_trigger.primary.msm8937.so
-vendor/lib64/vendor.qti.voiceprint@1.0.so
-vendor/lib64/hw/sound_trigger.primary.msm8937.so
+# Listen - from X00RD - QKQ1.191002.002-17.07.2003.405-20200330
+vendor/lib/hw/sound_trigger.primary.msm8937.so|305f7f8ba1ab05c464ef669cfaa6e5bd3432f73b
+vendor/lib/libadpcmdec.so|be5fdf08a08b635816381e61b6bbf2874c62f613
+vendor/lib/libgcs-calwrapper.so|c1e42b5db0be908052f19de3c3bfc5cee6819363
+vendor/lib/libgcs-ipc.so|33104e481daf5cf97720a6da812b09ed30aacaa1
+vendor/lib/libgcs-osal.so|5d0d7939c429a558ecb539e67bc379b417980444
+vendor/lib/libgcs.so|5f65daa6f37c21bc4dc2c7cc42caaf7d338b70e3
+vendor/lib/liblistenjni.so|131a949c9e0d0baf31e179645b7edd86876b5761
+vendor/lib/liblistensoundmodel2.so|5f533ea9a7ea488dfc9f028b9a0a478e54255dd7
+vendor/lib/libsmwrapper.so|1ab31b5378265784145defa47d50435029cf5f57
+vendor/lib64/hw/sound_trigger.primary.msm8937.so|1a55a7258b7a9f4d9521f83298baa59a9dbb23f2
+vendor/lib64/libgcs-calwrapper.so|f8ea3485465c2bde8db75e79dc668598f2984214
+vendor/lib64/libgcs-ipc.so|008d8690fe30116526a91a90fde909f9f1f8a916
+vendor/lib64/libgcs-osal.so|c69df09e6521df8ae922893ec758014e978a52f7
+vendor/lib64/libgcs.so|9018cdd801432804794c1371873d4f50942d1027
+vendor/lib64/liblistenjni.so|eaef51960b85d8d6904d268f96e56508fe9aa0c6
+vendor/lib64/liblistensoundmodel2.so|dfbfb43e255a474d1cf0cecb14b10ad63ac126c2
 
 # Media - from LA.UM.8.6.r1-02900-89xx.0
 lib/extractors/libmmparserextractor.so
