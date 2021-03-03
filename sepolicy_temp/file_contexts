@@ -1,1 +1,12 @@
-/firmware(/.*)?            u:object_r:tmp_root_mount_file:s0
+/firmware(/.*)?                              u:object_r:tmp_root_mount_file:s0
+
+# DT2W Node
+/sys/android_touch/doubletap2wake            u:object_r:android_touch:s0
+
+# Kcal Color Settings
+/sys/devices/platform/kcal_ctrl.0/kcal       u:object_r:kcal_dev:s0
+/sys/devices/platform/kcal_ctrl.0/kcal_sat   u:object_r:kcal_dev:s0
+/sys/devices/platform/kcal_ctrl.0/kcal_val   u:object_r:kcal_dev:s0
+/sys/devices/platform/kcal_ctrl.0/kcal_cont  u:object_r:kcal_dev:s0
+/sys/devices/platform/kcal_ctrl.0/kcal_hue   u:object_r:kcal_dev:s0
+/sys/devices/platform/kcal_ctrl.0/kcal_min   u:object_r:kcal_dev:s0
