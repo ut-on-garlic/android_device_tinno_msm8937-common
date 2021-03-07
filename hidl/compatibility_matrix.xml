@@ -58,4 +58,8 @@
     <vndk>
         <version>0.0.0</version>
     </vndk>
+    <sepolicy>
+        <kernel-sepolicy-version>30</kernel-sepolicy-version>
+        <sepolicy-version>26.0</sepolicy-version>
+    </sepolicy>
 </compatibility-matrix>
