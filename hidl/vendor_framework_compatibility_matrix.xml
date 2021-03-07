@@ -382,5 +382,4 @@ IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
                <instance>radioconfig1</instance>
            </interface>
     </hal>
-</manifest>
 </compatibility-matrix>
