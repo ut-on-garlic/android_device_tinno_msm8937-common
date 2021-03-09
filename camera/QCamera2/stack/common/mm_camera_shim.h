@@ -35,7 +35,7 @@
 /*
  * MCT shim layer APIs
  */
-#define SHIMLAYER_LIB "/system/vendor/lib/libmmcamera2_mct_shimlayer.so"
+#define SHIMLAYER_LIB "/$(TARGET_COPY_OUT_VENDOR)/lib/libmmcamera2_mct_shimlayer.so"
 
 struct cam_shim_packet;
 
