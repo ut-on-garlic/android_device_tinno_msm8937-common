@@ -1,5 +1,8 @@
 /*
+   Copyright (C) 2007, The Android Open Source Project
    Copyright (c) 2016, The CyanogenMod Project
+   Copyright (c) 2017, The LineageOS Project
+
    Redistribution and use in source and binary forms, with or without
    modification, are permitted provided that the following conditions are
    met:
@@ -42,6 +45,7 @@
 
 #include "vendor_init.h"
 #include "property_service.h"
+#include "util.h"
 
 #define FP_DEV_FLE "/sys/devices/platform/fp_drv/fp_drv_info"
 
@@ -49,6 +53,23 @@ using android::base::Trim;
 using android::base::GetProperty;
 using android::base::ReadFileToString;
 using android::init::property_set;
+
+void property_override(const std::string& name, const std::string& value)
+{
+    size_t valuelen = value.size();
+
+    prop_info* pi = (prop_info*) __system_property_find(name.c_str());
+    if (pi != nullptr) {
+        __system_property_update(pi, value.c_str(), valuelen);
+    }
+    else {
+        int rc = __system_property_add(name.c_str(), name.size(), value.c_str(), valuelen);
+        if (rc < 0) {
+            LOG(ERROR) << "property_set(\"" << name << "\", \"" << value << "\") failed: "
+                       << "__system_property_add failed";
+        }
+    }
+}
 
 void init_fingerprint_properties()
 {
@@ -79,7 +100,7 @@ static void init_alarm_boot_properties()
     char const *power_off_alarm_file = "/persist/alarm/powerOffAlarmSet";
     std::string boot_reason;
     std::string power_off_alarm;
-    std::string reboot_reason = GetProperty("ro.boot.alarmboot", "");
+//    std::string reboot_reason = GetProperty("ro.boot.alarmboot", "");
 
     if (ReadFileToString(boot_reason_file, &boot_reason)
             && ReadFileToString(power_off_alarm_file, &power_off_alarm)) {
@@ -98,17 +119,58 @@ static void init_alarm_boot_properties()
          * 7 -> CBLPWR_N pin toggled (for external power supply)
          * 8 -> KPDPWR_N pin toggled (power key pressed)
          */
-         if ((Trim(boot_reason) == "3" || reboot_reason == "true")
+
+         /* if ((Trim(boot_reason) == "3" || reboot_reason == "true")
                  && Trim(power_off_alarm) == "1") {
              property_set("ro.alarm_boot", "true");
          } else {
              property_set("ro.alarm_boot", "false");
          }
+         */
+         if (Trim(boot_reason) == "0") {
+            property_set("ro.boot.bootreason", "invalid");
+            property_set("ro.alarm_boot", "false");
+        }
+        else if (Trim(boot_reason) == "1") {
+            property_set("ro.boot.bootreason", "hard_reset");
+            property_set("ro.alarm_boot", "false");
+        }
+        else if (Trim(boot_reason) == "2") {
+            property_set("ro.boot.bootreason", "smpl");
+            property_set("ro.alarm_boot", "false");
+        }
+        else if (Trim(boot_reason) == "3") {
+            property_set("ro.alarm_boot", "true");
+        }
+        else if (Trim(boot_reason) == "4") {
+            property_set("ro.boot.bootreason", "dc_chg");
+            property_set("ro.alarm_boot", "false");
+        }
+        else if (Trim(boot_reason) == "5") {
+            property_set("ro.boot.bootreason", "usb_chg");
+            property_set("ro.alarm_boot", "false");
+        }
+        else if (Trim(boot_reason) == "6") {
+            property_set("ro.boot.bootreason", "pon1");
+            property_set("ro.alarm_boot", "false");
+        }
+        else if (Trim(boot_reason) == "7") {
+            property_set("ro.boot.bootreason", "cblpwr");
+            property_set("ro.alarm_boot", "false");
+        }
+        else if (Trim(boot_reason) == "8") {
+            property_set("ro.boot.bootreason", "kpdpwr");
+            property_set("ro.alarm_boot", "false");
+        }
+    }
+    else {
+        LOG(ERROR) << "Unable to read bootreason from " << boot_reason_file;
     }
 }
 
 void vendor_load_properties()
 {
+	LOG(INFO) << "Loading vendor specific properties";
     init_alarm_boot_properties();
     init_fingerprint_properties();
 }
