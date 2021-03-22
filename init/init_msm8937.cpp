@@ -49,24 +49,16 @@
 #define FP_DEV_FLE "/sys/devices/platform/fp_drv/fp_drv_info"
 
 using android::base::Trim;
-using android::base::GetProperty;
 using android::base::ReadFileToString;
-using android::init::property_set;
 
-void property_override(const std::string& name, const std::string& value)
+void property_override(char const prop[], char const value[], bool add = true)
 {
-    size_t valuelen = value.size();
+    auto pi = (prop_info *) __system_property_find(prop);
 
-    prop_info* pi = (prop_info*) __system_property_find(name.c_str());
     if (pi != nullptr) {
-        __system_property_update(pi, value.c_str(), valuelen);
-    }
-    else {
-        int rc = __system_property_add(name.c_str(), name.size(), value.c_str(), valuelen);
-        if (rc < 0) {
-            LOG(ERROR) << "property_set(\"" << name << "\", \"" << value << "\") failed: "
-                       << "__system_property_add failed";
-        }
+         __system_property_update(pi, value, strlen(value));
+    } else if (add) {
+        __system_property_add(prop, strlen(prop), value, strlen(value));
     }
 }
 
@@ -77,13 +69,13 @@ void init_fingerprint_properties()
     if (ReadFileToString(FP_DEV_FLE, &fp_dev)) {
         LOG(INFO) << "Loading Fingerprint HAL for sensor version " << fp_dev;
         if (!strncmp(fp_dev.c_str(), "silead_fp", 9)) {
-            property_set("ro.hardware.fingerprint", "silead");
+            property_override("ro.hardware.fingerprint", "silead");
         } else if (!strncmp(fp_dev.c_str(), "goodix_fp", 9)) {
-            property_set("ro.hardware.fingerprint", "goodix");
+            property_override("ro.hardware.fingerprint", "goodix");
         } else if (!strncmp(fp_dev.c_str(), "elan_fp", 7)) {
-            property_set("ro.hardware.fingerprint", "elan");
+            property_override("ro.hardware.fingerprint", "elan");
         } else if (!strncmp(fp_dev.c_str(), "chipone_fp", 10)) {
-            property_set("ro.hardware.fingerprint", "chipone");
+            property_override("ro.hardware.fingerprint", "chipone");
         } else {
             LOG(ERROR) << "Unsupported fingerprint sensor: " << fp_dev;
         }
@@ -127,41 +119,41 @@ static void init_alarm_boot_properties()
          }
          */
          if (Trim(boot_reason) == "0") {
-            property_set("ro.boot.bootreason", "invalid");
-            property_set("ro.alarm_boot", "false");
+            property_override("ro.boot.bootreason", "invalid");
+            property_override("ro.alarm_boot", "false");
         }
         else if (Trim(boot_reason) == "1") {
-            property_set("ro.boot.bootreason", "hard_reset");
-            property_set("ro.alarm_boot", "false");
+            property_override("ro.boot.bootreason", "hard_reset");
+            property_override("ro.alarm_boot", "false");
         }
         else if (Trim(boot_reason) == "2") {
-            property_set("ro.boot.bootreason", "smpl");
-            property_set("ro.alarm_boot", "false");
+            property_override("ro.boot.bootreason", "smpl");
+            property_override("ro.alarm_boot", "false");
         }
         else if (Trim(boot_reason) == "3") {
-            property_set("ro.alarm_boot", "true");
+            property_override("ro.alarm_boot", "true");
             // disable boot animation for RTC wakeup
-            property_set("debug.sf.nobootanimation", "1");
+            property_override("debug.sf.nobootanimation", "1");
         }
         else if (Trim(boot_reason) == "4") {
-            property_set("ro.boot.bootreason", "dc_chg");
-            property_set("ro.alarm_boot", "false");
+            property_override("ro.boot.bootreason", "dc_chg");
+            property_override("ro.alarm_boot", "false");
         }
         else if (Trim(boot_reason) == "5") {
-            property_set("ro.boot.bootreason", "usb_chg");
-            property_set("ro.alarm_boot", "false");
+            property_override("ro.boot.bootreason", "usb_chg");
+            property_override("ro.alarm_boot", "false");
         }
         else if (Trim(boot_reason) == "6") {
-            property_set("ro.boot.bootreason", "pon1");
-            property_set("ro.alarm_boot", "false");
+            property_override("ro.boot.bootreason", "pon1");
+            property_override("ro.alarm_boot", "false");
         }
         else if (Trim(boot_reason) == "7") {
-            property_set("ro.boot.bootreason", "cblpwr");
-            property_set("ro.alarm_boot", "false");
+            property_override("ro.boot.bootreason", "cblpwr");
+            property_override("ro.alarm_boot", "false");
         }
         else if (Trim(boot_reason) == "8") {
-            property_set("ro.boot.bootreason", "kpdpwr");
-            property_set("ro.alarm_boot", "false");
+            property_override("ro.boot.bootreason", "kpdpwr");
+            property_override("ro.alarm_boot", "false");
         }
     }
     else {
