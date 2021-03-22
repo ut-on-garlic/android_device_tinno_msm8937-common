@@ -45,7 +45,6 @@
 
 #include "vendor_init.h"
 #include "property_service.h"
-#include "util.h"
 
 #define FP_DEV_FLE "/sys/devices/platform/fp_drv/fp_drv_info"
 
