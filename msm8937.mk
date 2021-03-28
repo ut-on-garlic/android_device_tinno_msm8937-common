@@ -372,7 +372,7 @@ PRODUCT_PACKAGES += \
 
 # VNDK
 PRODUCT_PACKAGES += \
-    vndk-sp \
+    libstdc++.vendor \
     libhwbinder \
     libhwbinder.vendor \
     libhidltransport \
