@@ -497,10 +497,6 @@ vendor/lib/libOmxWmaDec.so|404ae6ea303634d96d3ee46bee2c6f898fa46c15
 vendor/lib/libvqzip.so|24e5eb30e5a2cdb544c8688d81d7cc75a1d85eaf
 -vendor/lib64/libgpustats.so|0cc12485618ae67fb327e89d03b78c5018eab7c1
 
-# RTP Libs - from vangogh:11/RKQ1.200826.002
-system_ext/lib/libmmrtpdecoder.so|e50c35366bd428ac29e8a828cfd6b22aa08a0a55
-system_ext/lib/libmmrtpencoder.so|5614934db1f7302b91abf5ed123132b346b24038
-
 # Modem - from TA-1024 - PKQ1.181105.001
 vendor/lib/libwms.so|e5d1d5811fd4d898bcb19594b212ebbba1841be8
 vendor/lib64/libwms.so|162540d32f74d0d6022e484fc44db3979bca1654
