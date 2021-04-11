@@ -1,4 +1,4 @@
-# ADSP - from Daisy QKQ1.191002.002 V11.0.5.0.QDLMIXM
+# ADSP - from daisy-user 10 QKQ1.191002.002 V11.0.18.0.QDLMIXM
 vendor/bin/adsprpcd
 vendor/lib/libadsprpc.so
 vendor/lib/libadsp_default_listener.so
@@ -13,7 +13,7 @@ vendor/lib64/libfastcvopt.so
 vendor/lib64/libmdsprpc.so
 vendor/lib64/libsdsprpc.so
 
-# ADSP modules - from Daisy QKQ1.191002.002 V11.0.5.0.QDLMIXM
+# ADSP modules - from daisy-user 10 QKQ1.191002.002 V11.0.18.0.QDLMIXM
 vendor/lib/rfsa/adsp/dirac_resource.dar
 vendor/lib/rfsa/adsp/libadsp_hvx_add_constant.so
 vendor/lib/rfsa/adsp/libadsp_hvx_skel.so
@@ -28,7 +28,7 @@ vendor/lib/rfsa/adsp/libfastcvadsp_skel.so
 vendor/lib/rfsa/adsp/libFastRPC_AUE_Forward_skel.so
 vendor/lib/rfsa/adsp/libFastRPC_UTF_Forward_Qtc2_skel.so
 
-# Audio - from Daisy QKQ1.191002.002 V11.0.5.0.QDLMIXM
+# Audio - from daisy-user 10 QKQ1.191002.002 V11.0.18.0.QDLMIXM
 vendor/bin/audioflacapp
 vendor/lib/libacdb-fts.so
 vendor/lib/libacdbloader.so
@@ -64,14 +64,35 @@ vendor/lib64/soundfx/libaudiopreprocessing.so
 vendor/lib64/soundfx/libqcbassboost.so
 vendor/lib64/soundfx/libqcvirt.so
 
-# Bluetooth - from tissot - PKQ1.180917.001.V10.0.4.0.PDHMIXM
-vendor/bin/hw/android.hardware.bluetooth@1.0-service-qti|9178856dc8651b499d1b155825b6115a486ee05e
-vendor/bin/hci_qcomm_init|d933599fc234dd0250cc3599e01ea0f7c3313ad6
-vendor/bin/wcnss_filter|4056254b88bd7cbd7302892236b7d4c8f077dae0
-vendor/etc/init/android.hardware.bluetooth@1.0-service-qti.rc|a979981c55f3dcaf6cf2212e71b901ca4d58b959
-vendor/lib64/hw/android.hardware.bluetooth@1.0-impl-qti.so|323e32342cc8e81ac747c158978af1f0e26af7ac
-vendor/lib64/libbtnv.so|35444e0ca93a50751db92aa4871cf277dc66b1fa
-vendor/lib64/libbt-hidlclient.so|0b0b69ef9787e3cd5409f0050cad03698dd6ce26
+# Bluetooth - from daisy-user 10 QKQ1.191002.002 V11.0.18.0.QDLMIXM
+-lib/libbtconfigstore.so
+-lib64/libbtconfigstore.so
+vendor/bin/hw/android.hardware.bluetooth@1.0-service-qti
+vendor/etc/init/android.hardware.bluetooth@1.0-service-qti.rc
+vendor/lib64/hw/android.hardware.bluetooth@1.0-impl-qti.so
+vendor/lib64/libbtnv.so
+vendor/lib64/libbt-hidlclient.so
+
+# Bluetooth (shared dependencies) - from daisy-user 10 QKQ1.191002.002 V11.0.18.0.QDLMIXM
+vendor/lib64/vendor.qti.hardware.fm@1.0.so
+
+# Bluetooth Audio - from daisy-user 10 QKQ1.191002.002 V11.0.18.0.QDLMIXM
+vendor/lib64/hw/audio.bluetooth_qti.default.so
+vendor/lib64/hw/vendor.qti.hardware.bluetooth_audio@2.0-impl.so
+vendor/lib64/hw/vendor.qti.hardware.bluetooth_sar@1.0-impl.so
+vendor/lib64/hw/vendor.qti.hardware.btconfigstore@1.0-impl.so
+vendor/lib64/libbluetooth_audio_session_qti.so
+vendor/lib64/vendor.qti.hardware.bluetooth_audio@2.0.so
+vendor/lib64/vendor.qti.hardware.bluetooth_sar@1.0.so
+vendor/lib64/vendor.qti.hardware.btconfigstore@1.0.so
+vendor/lib/hw/audio.bluetooth_qti.default.so
+vendor/lib/hw/vendor.qti.hardware.bluetooth_audio@2.0-impl.so
+vendor/lib/hw/vendor.qti.hardware.bluetooth_sar@1.0-impl.so
+vendor/lib/hw/vendor.qti.hardware.btconfigstore@1.0-impl.so
+vendor/lib/libbluetooth_audio_session_qti.so
+vendor/lib/vendor.qti.hardware.bluetooth_audio@2.0.so
+vendor/lib/vendor.qti.hardware.bluetooth_sar@1.0.so
+vendor/lib/vendor.qti.hardware.btconfigstore@1.0.so
 
 # Camera - from U-FEEL-PRIME-V01.31.OPE.20-[Nougat-7.1]-P7201AN
 vendor/bin/mm-qcamera-daemon|2012e52f8efbe4abc3e4250c497eddde432d426a
@@ -201,7 +222,7 @@ vendor/lib/libmmcamera_isp_sub_module.so|260cd45246f6e4fb6ed2e802b8546f58ac6da16
 vendor/lib/libmmcamera_isp_template.so|5a9db300ad135abe430aaa13beadeef2d4374ee4
 vendor/lib/libmmcamera_isp_wb40.so|3658818697ba0da0b9318553e92f081d98d26bde
 
-# CNE - from Daisy QKQ1.191002.002 V11.0.5.0.QDLMIXM
+# CNE - from daisy-user 10 QKQ1.191002.002 V11.0.18.0.QDLMIXM
 etc/cne/Nexus/ATT/ATT_profiles.xml
 etc/cne/Nexus/ROW/ROW_profiles.xml
 etc/cne/Nexus/VZW/VZW_profiles.xml
@@ -456,7 +477,7 @@ vendor/lib/hw/vulkan.msm8953.so:vendor/lib/hw/vulkan.msm8937.so
 vendor/lib64/hw/vulkan.msm8937.so
 vendor/lib64/hw/vulkan.msm8953.so:vendor/lib64/hw/vulkan.msm8937.so
 
-# Graphics firmware
+# Graphics firmware - from daisy-user 10 QKQ1.191002.002 V11.0.18.0.QDLMIXM
 vendor/firmware/a530_gpmu.fw2
 vendor/firmware/a530_pfp.fw
 vendor/firmware/a530_pm4.fw
@@ -469,7 +490,7 @@ vendor/firmware/a530v3_seq.fw2
 # Keystore - from tissot - PKQ1.180917.001.V10.0.4.0.PDHMIXM
 vendor/lib64/hw/keystore.msm8937.so|f71f1439c9c356ce05d88b876253b4e3dcb10f4b
 
-# Latency - from Daisy QKQ1.191002.002 V11.0.5.0.QDLMIXM
+# Latency - from daisy-user 10 QKQ1.191002.002 V11.0.18.0.QDLMIXM
 product/framework/vendor.qti.hardware.data.latency-V1.0-java.jar
 product/framework/vendor.qti.latency-V2.0-java.jar
 product/lib64/vendor.qti.hardware.data.latency@1.0.so
@@ -534,7 +555,7 @@ vendor/lib64/libmm-color-convertor.so|d3539eb5a6a986f8ba81bac9cbf7b34872b12f1a
 -vendor/lib64/libOmxSwVencMpeg4.so|bdbf3f2855a25ee6276072b6be197ddb1989160e
 -vendor/lib64/libMpeg4SwEncoder.so|37bd495b58e580b4cb3e30b6ae1cb0a26758f06d
 
-# Modem - from TA-1024 - PKQ1.181105.001
+# Modem - from daisy-user 10 QKQ1.191002.002 V11.0.18.0.QDLMIXM
 vendor/lib/libwms.so
 vendor/lib64/libwms.so
 
@@ -595,13 +616,13 @@ vendor/etc/init/vendor.qti.hardware.iop@2.0-service.rc|fd11367b2585702190ef2577c
 vendor/lib/libqti-iopd.so|124672742bb36f610fa0da328162459f30d7fd80
 vendor/lib64/libqti-iopd.so|66359e2e0d6ec5cf31927ba4bfdbecce52b0fa3a
 
-# Peripheral manager - from Daisy QKQ1.191002.002 V11.0.5.0.QDLMIXM
+# Peripheral manager - from daisy-user 10 QKQ1.191002.002 V11.0.18.0.QDLMIXM
 vendor/bin/pm-proxy
 vendor/bin/pm-service
 vendor/lib/libperipheral_client.so
 vendor/lib64/libperipheral_client.so
 
-# Postprocessing - from Daisy QKQ1.191002.002 V11.0.5.0.QDLMIXM
+# Postprocessing - from daisy-user 10 QKQ1.191002.002 V11.0.18.0.QDLMIXM
 etc/permissions/com.qti.snapdragon.sdk.display.xml
 framework/com.qti.snapdragon.sdk.display.jar
 vendor/bin/hw/vendor.display.color@1.0-service
@@ -618,7 +639,7 @@ vendor/lib64/vendor.display.color@1.0.so
 vendor/lib64/vendor.display.postproc@1.0.so
 vendor/lib64/vendor.qti.hardware.qdutils_disp@1.0.so
 
-# Power-off alarm - from Daisy QKQ1.191002.002 V11.0.5.0.QDLMIXM
+# Power-off alarm - from daisy-user 10 QKQ1.191002.002 V11.0.18.0.QDLMIXM
 product/framework/vendor.qti.hardware.alarm-V1.0-java.jar
 -product/app/PowerOffAlarm/PowerOffAlarm.apk
 vendor/bin/hw/vendor.qti.hardware.alarm@1.0-service
@@ -627,7 +648,7 @@ vendor/etc/init/vendor.qti.hardware.alarm@1.0-service.rc
 vendor/lib64/hw/vendor.qti.hardware.alarm@1.0-impl.so
 vendor/lib64/vendor.qti.hardware.alarm@1.0.so
 
-# QMI - from Daisy QKQ1.191002.002 V11.0.5.0.QDLMIXM
+# QMI - from daisy-user 10 QKQ1.191002.002 V11.0.18.0.QDLMIXM
 etc/permissions/qti_libpermissions.xml
 etc/permissions/qti_permissions.xml
 vendor/bin/irsc_util
@@ -663,7 +684,7 @@ vendor/lib64/libqmi_common_so.so
 vendor/lib64/libqmi_csi.so
 vendor/lib64/libqmi_encdec.so
 
-# RIL - from tissot - PKQ1.180917.001.V10.0.4.0.PDHMIXM
+# RIL - from daisy-user 10 QKQ1.191002.002 V11.0.18.0.QDLMIXM
 -product/app/datastatusnotification/datastatusnotification.apk
 -product/app/embms/embms.apk
 -product/app/QtiTelephonyService/QtiTelephonyService.apk
@@ -741,7 +762,7 @@ vendor/radio/qcril_database/upgrade/4_version_update_ecc_table.sql
 vendor/radio/qcril_database/upgrade/5_version_update_ecc_table.sql
 vendor/radio/qcril_database/upgrade/6_version_update_ecc_table.sql
 
-# Radio - IMS - from Daisy QKQ1.191002.002 V11.0.5.0.QDLMIXM
+# Radio - IMS - from daisy-user 10 QKQ1.191002.002 V11.0.18.0.QDLMIXM
 etc/permissions/com.qualcomm.qti.imscmservice.xml
 -product/app/imssettings/imssettings.apk
 -product/app/uceShimService/uceShimService.apk
@@ -815,7 +836,7 @@ vendor/lib64/vendor.qti.imsrtpservice@2.0.so
 vendor/lib64/vendor.qti.imsrtpservice@2.1-service-Impl.so
 vendor/lib64/vendor.qti.imsrtpservice@2.1.so
 
-# QC RIL - from Daisy QKQ1.191002.002 V11.0.5.0.QDLMIXM
+# QC RIL - from daisy-user 10 QKQ1.191002.002 V11.0.18.0.QDLMIXM
 vendor/bin/hw/qcrild
 vendor/etc/init/qcrild.rc
 vendor/lib64/libqcrilFramework.so
@@ -843,7 +864,7 @@ vendor/bin/thermal-engine|d1ef35828e78206f190d9b4fc4b982568a79176c
 -vendor/lib/libthermalclient.so|67a691df34cfef504929af69f0442e4d53991da2
 -vendor/lib64/libthermalclient.so|cc4ac0215208b435f16b46649311c8876a30073a
 
-# Time services - daisy-user 10 QKQ1.191002.002 V11.0.18.0.QDLMIXM
+# Time services - from daisy-user 10 QKQ1.191002.002 V11.0.18.0.QDLMIXM
 -vendor/app/TimeService/TimeService.apk
 vendor/bin/time_daemon
 vendor/etc/init/init.time_daemon.rc
