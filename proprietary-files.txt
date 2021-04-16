@@ -850,3 +850,23 @@ vendor/lib/libwfdmmservice.so|f180f820e507d7ed2676b0d66d6d63cb74458563
 vendor/lib/libwfdmodulehdcpsession.so|4800ec57f1a546200389b98221145a310c5d6aca
 vendor/lib64/libwfdhdcpcp.so|bd09a8de0a0dbb64ec04ae5fc4f8f3c387e7dd80
 
+# Sigma - Miracast - from daisy-user 10 QKQ1.191002.002 V11.0.18.0.QDLMIXM
+bin/sigma_miracasthalservice
+etc/init/com.qualcomm.qti.sigma_miracast@1.0-service.rc
+product/lib/vendor.qti.hardware.sigma_miracast@1.0.so
+product/lib64/vendor.qti.hardware.sigma_miracast@1.0.so
+lib/hw/vendor.qti.hardware.sigma_miracast@1.0-impl.so
+lib/libmiracastsystem.so
+lib/vendor.qti.hardware.sigma_miracast@1.0-halimpl.so
+lib64/hw/vendor.qti.hardware.sigma_miracast@1.0-impl.so
+lib64/libmiracastsystem.so
+lib64/vendor.qti.hardware.sigma_miracast@1.0-halimpl.so
+vendor/bin/sigma_dut
+vendor/lib/libmiracast.so
+vendor/lib/vendor.qti.hardware.sigma_miracast@1.0.so
+vendor/lib/vendor.qti.hardware.sigma_miracast@1.0-impl.so
+vendor/lib/vendor.qti.hardware.sigma_miracast@1.0-halimpl.so
+vendor/lib64/libmiracast.so
+vendor/lib64/vendor.qti.hardware.sigma_miracast@1.0.so
+vendor/lib64/vendor.qti.hardware.sigma_miracast@1.0-impl.so
+vendor/lib64/vendor.qti.hardware.sigma_miracast@1.0-halimpl.so
