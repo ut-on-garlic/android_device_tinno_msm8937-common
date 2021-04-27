@@ -55,21 +55,21 @@ int32_t readFile(std::string filename, std::string& contents) {
 
 int main() {
 
-    std::string fp_dev;
+/*    std::string fp_dev;
     if (readFile(fp_dev_file, fp_dev)) {
-        ALOGE("Loading Fingerprint HAL for sensor version " fp_dev);
+        ALOGE("Loading Fingerprint HAL for sensor version ");
         if (!strncmp(fp_dev.c_str(), "goodix_fp", 9)) {
-            ALOGI("is_goodix = true");
-            is_goodix = true;
-        } else {
-            ALOGI("is_goodix = false");
+            ALOGE("is_goodix = false");
             is_goodix = false;
+        } else {
+            ALOGE("is_goodix = true");
+            is_goodix = true;
         }
     } else {
-        ALOGE(fp_dev_file " cannot be read!  killing " log_tag " binder service!");
+        ALOGE(" cannot be read!  killing " LOG_TAG " binder service!");
         return 1;
     }
-
+*/
     ALOGI("Start biometrics");
     android::sp<IBiometricsFingerprint> bio = BiometricsFingerprint::getInstance();
 
