@@ -171,10 +171,10 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/data/netmgr_config.xml:system/etc/data/netmgr_config.xml
 
 # Fingerprint
-PRODUCT_PACKAGES += \
-    android.hardware.biometrics.fingerprint@2.0-service-custom \
-    fingerprint.msm8937 \
-    libunwind
+#PRODUCT_PACKAGES += \
+#    android.hardware.biometrics.fingerprint@2.0-service-custom \
+#    fingerprint.msm8937 \
+#    libunwind
 
 # FM
 PRODUCT_PACKAGES += \
