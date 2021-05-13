@@ -598,10 +598,6 @@ vendor/lib64/libvpplibrary.so|cb4ed806623bfa84bf33d3951c00326e4ae8a495
 -vendor/lib64/libOmxSwVencMpeg4.so|98e767ba2e48975797c91429635e3d614da473cf
 -vendor/lib64/libMpeg4SwEncoder.so|b15481f233686725b1bd28c0b73cca5a57a57f66
 
-# Modem - from daisy-user 10 QKQ1.191002.002 V11.0.18.0.QDLMIXM
-vendor/lib/libwms.so|84dd1579d1392f400fc68ffdf3545fdb058d04d7
-vendor/lib64/libwms.so|3ac74491eadad43b6e9fd661b47d3bb7fdab91fb
-
 # Perf Configs - from TA-1024 - PKQ1.181105.001
 vendor/etc/perf/commonresourceconfigs.xml|73fc37a6fa498a98758b5a91ebacb87ef0ffdcdf
 vendor/etc/perf/perf-profile0.conf|02204355bf29ceb0460cd53e6716552bb9d9b05f
